@@ -1,0 +1,9 @@
+com/laon/entities/LoanPlans.class
+com/laon/entities/BaseInterestRates.class
+com/laon/repository/LoanPlansRepository.class
+com/laon/dto/LoanPlansHistoryDTO.class
+com/laon/dto/LoanPlansDTO.class
+com/laon/entities/LoanPlansHistory.class
+com/laon/repository/LoanPlansHistoryRepository.class
+com/laon/repository/BaseInterestRatesRepository.class
+com/laon/dto/BaseInterestRatesDTO.class

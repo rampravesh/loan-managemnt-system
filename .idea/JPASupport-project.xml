@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoGeneratorSettingsState">
+    <option name="ignoredFields">
+      <set>
+        <option value="" />
+      </set>
+    </option>
+    <option name="moduleName" value="library" />
+    <option name="moduleNameToSettings">
+      <map>
+        <entry key="library">
+          <value>
+            <ModuleSettings>
+              <option name="controllerParentDirectory" value="$PROJECT_DIR$/library/src/main/java" />
+              <option name="dtoPackageName" value="com.laon.dto" />
+              <option name="dtoParentDirectory" value="$PROJECT_DIR$/library/src/main/java" />
+              <option name="entityPackageName" value="com.laon.entities" />
+              <option name="entityParentDirectory" value="$PROJECT_DIR$/library/src/main/java" />
+              <option name="generateDTO" value="true" />
+              <option name="mapperXmlParentDirectory" value="$PROJECT_DIR$/library/src/main/resources" />
+              <option name="repositoryPackageName" value="com.laon.repository" />
+              <option name="repositoryParentDirectory" value="$PROJECT_DIR$/library/src/main/java" />
+              <option name="serviceParentDirectory" value="$PROJECT_DIR$/library/src/main/java" />
+              <option name="voParentDirectory" value="$PROJECT_DIR$/library/src/main/java" />
+            </ModuleSettings>
+          </value>
+        </entry>
+        <entry key="loan-managemnt-system">
+          <value>
+            <ModuleSettings />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="DatabaseSettingsState">
+    <option name="database" value="LoanManagementSystem" />
+    <option name="driverClass" value="com.mysql.cj.jdbc.Driver" />
+    <option name="driverPath" value="$USER_HOME$/Downloads/software &amp; tools/mysql-connector-j-8.2.0 2/mysql-connector-j-8.2.0.jar" />
+    <option name="port" value="3305" />
+    <option name="url" value="jdbc:mysql://{host}:{port}/{database}?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+  </component>
+</project>
