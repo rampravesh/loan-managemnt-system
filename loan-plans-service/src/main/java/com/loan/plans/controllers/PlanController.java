@@ -24,26 +24,51 @@ public class PlanController {
         return "hello";
     }
 
+    /***
+     * Get all interest rates
+     * @return
+     */
     @RequestMapping(value = ControllerConstants.INTEREST_RATES,method = RequestMethod.GET)
     public List<BaseInterestRatesDTO> getAllInerestRates(){
        return planService.getAllInterestRates();
     }
 
+    /***
+     * Get all loan plan
+     * @return
+     */
     @RequestMapping(value = ControllerConstants.LOAN_PLANS,method = RequestMethod.GET)
     public List<LoanPlansDTO> getLoanPlans(){
         return planService.getLoanPlans();
     }
 
+    /***
+     * Get loanPlan by id
+     * @param loanId
+     * @return
+     */
     @RequestMapping(value = ControllerConstants.GET_LOAN_PLANS_BY_ID,method = RequestMethod.GET)
     public LoanPlansDTO getLoanPlans(@PathVariable(name="loanId") Integer loanId){
         return planService.getLoanPlan(loanId);
     }
 
+    /***
+     * Update existing loan plan
+     * @param loanId
+     * @param loanPlansDTO
+     * @return
+     */
     @RequestMapping(value = ControllerConstants.GET_LOAN_PLANS_BY_ID,method = RequestMethod.PUT)
     public LoanPlansDTO updateLoanPlan(@PathVariable(name="loanId") Integer loanId,
      @Valid @RequestBody(required = true) LoanPlansDTO loanPlansDTO){
         return planService.update(loanId,loanPlansDTO);
     }
+
+    /***
+     * Create new loan plan using this dto
+     * @param loanPlansDTO
+     * @return
+     */
     @RequestMapping(value = ControllerConstants.LOAN_PLANS,method = RequestMethod.POST)
     public LoanPlansDTO updateLoanPlan(@Valid @RequestBody(required = true) LoanPlansDTO loanPlansDTO){
         return planService.create(loanPlansDTO);
