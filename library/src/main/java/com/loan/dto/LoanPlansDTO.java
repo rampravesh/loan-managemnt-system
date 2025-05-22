@@ -4,6 +4,7 @@ package com.loan.dto;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Date;
 
 @Data
@@ -15,17 +16,17 @@ public class LoanPlansDTO implements Serializable {
 
     private Integer loanTypeId;
 
-    private Integer principleAmount;
+    private BigDecimal principleAmount;
 
     private Integer tenure;
 
-    private Float interestRate;
+    private BigDecimal interestRate;
 
-    private Integer interestAmount;
+    private BigDecimal interestAmount;
 
-    private Integer totalPayable;
+    private BigDecimal totalPayable;
 
-    private Float emi;
+    private BigDecimal emi;
 
     private Date planValidity;
 
