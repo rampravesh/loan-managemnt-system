@@ -4,6 +4,7 @@ package com.loan.dto;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 public class BaseInterestRatesDTO implements Serializable {
@@ -12,6 +13,6 @@ public class BaseInterestRatesDTO implements Serializable {
 
     private String loanType;
 
-    private Float baseInterestRate;
+    private BigDecimal baseInterestRate;
 
 }

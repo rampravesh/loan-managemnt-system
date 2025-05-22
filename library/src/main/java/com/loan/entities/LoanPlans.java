@@ -1,6 +1,8 @@
 package com.loan.entities;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,11 +16,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects; // Added for safety, though not strictly needed by the provided hashCode/equals
 
-@Data
+@Getter
+@Setter
+@ToString(exclude = "loanPlansHistories")
 @Entity
 @Table(name = "LoanPlans")
 public class LoanPlans implements Serializable {
@@ -37,22 +43,22 @@ public class LoanPlans implements Serializable {
     private Integer loanTypeId;
 
     @Column(name = "PrincipleAmount")
-    private Integer principleAmount;
+    private BigDecimal principleAmount;
 
     @Column(name = "Tenure")
     private Integer tenure;
 
     @Column(name = "InterestRate")
-    private Float interestRate;
+    private BigDecimal interestRate;
 
     @Column(name = "InterestAmount")
-    private Integer interestAmount;
+    private BigDecimal interestAmount;
 
     @Column(name = "TotalPayable")
-    private Integer totalPayable;
+    private BigDecimal totalPayable;
 
     @Column(name = "EMI")
-    private Float emi;
+    private BigDecimal emi;
 
     @Column(name = "PlanValidity")
     private Date planValidity;
@@ -60,6 +66,7 @@ public class LoanPlans implements Serializable {
     @Column(name = "PlanAddedOn")
     private Date planAddedOn;
 
+// TODO: This relationship mapping to BaseInterestRates was commented out. Review if it should be enabled, updated (e.g., CascadeType), or removed in the future.
 //    @ManyToOne(
 //            fetch = FetchType.LAZY,
 //            cascade = {CascadeType.ALL}
@@ -72,4 +79,17 @@ public class LoanPlans implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "loanPlans",cascade = {CascadeType.PERSIST})
     private List<LoanPlansHistory> loanPlansHistories = new ArrayList();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LoanPlans loanPlans = (LoanPlans) o;
+        return planId != null && planId.equals(loanPlans.planId);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
